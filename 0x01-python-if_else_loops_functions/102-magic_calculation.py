@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 def magic_calculation(a, b, c):
+    from magic_calculation_102 import add, sub
     if a < b:
-        return c
-    elif b > c:
-        return a + b
+        c = add(a, b)
+	for n in range(4, 6):
+            c = add(c, n)
+	    return (c)
     else:
-        return b * c
+        return (sub(a, b))
