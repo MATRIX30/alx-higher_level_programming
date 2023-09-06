@@ -1,0 +1,3 @@
+#!/bin/bash
+python3 import py_compile as pc
+python3 pc.compile("$PYFILE", cfile="$PYFILE"+"c")
