@@ -5,7 +5,7 @@ while (p >= 97):
     if p % 2 != 0:
         p = p - 32
         flag = 1
-    print("{:s}".format(chr(i)), end="")
+    print("{:s}".format(chr(p)), end="")
     if flag == 1:
-        i = i + 32
-    i = i - 1
+        p = p + 32
+    p = p - 1
