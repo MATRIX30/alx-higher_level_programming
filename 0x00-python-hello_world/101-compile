@@ -1,3 +1,4 @@
 #!/bin/bash
-python3 import py_compile as pc
-python3 pc.compile("$PYFILE", cfile="$PYFILE"+"c")
+python3 -m compileall $PYFILE;
+cp __pycache__/*.pyc "${PYFILE}c";
+rm -rf ./__pycache__
