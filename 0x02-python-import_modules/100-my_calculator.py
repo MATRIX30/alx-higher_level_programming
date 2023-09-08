@@ -5,6 +5,7 @@ if __name__ == "__main__":
     arg_count = len(argv)
     a = int(argv[1])
     b = int(argv[3])
+    operation = argv[2]
     if arg_count != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
@@ -12,12 +13,12 @@ if __name__ == "__main__":
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
     else:
-        if (argv[2] == '+'):
+        if (operation == '+'):
             result = add(a, b)
-        elif (argv[2] == '-'):
+        elif (operation == '-'):
             result = sub(a, b)
-        elif (argv[2] == '*'):
+        elif (operation == '*'):
             result = mul(a, b)
-        elif (argv[2] == '/'):
+        elif (operation == '/'):
             result = div(a, b)
         print(f"{a:d} {argv[2]} {b:d} = {result:d}")
