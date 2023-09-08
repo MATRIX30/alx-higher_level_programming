@@ -1,0 +1,2 @@
+#!/bin/bash
+alias a="git add ." ex="chmod +x *.py" c="git commit -m" d="pycodestyle" p="git push" s="git status"
