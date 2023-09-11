@@ -1,49 +1,41 @@
 #include "lists.h"
+#include <stdio.h>
 /**
-* get_prev_node - helper function to get previous node
-* @head: pointer to the head
-* @back: pointer pointing to back of list
-* Return: pointer to previous pointer to back
+* is_palindrome - this function tells if a linked list is a palindrome or not
+* @head: -pointer to the head
+* Return: - 1 if palindrome 0 otherwise
 */
-listint_t *get_prev_node(listint_t *head, listint_t *back)
-{
-	if ((head == back) || head->next == back)
-	{
-		return (head);
-	}
-	while (head->next != back)
-	{
-		head = head->next;
-	}
-	return (head);
-}
 
-/**
- * is_palindrome - functiont to verify if a linked list is a palindrome
- * @head: pointer to the head
- * Return: 0 if its not a palindrome and 1 otherwise
-*/
 int is_palindrome(listint_t **head)
 {
-	listint_t *back = NULL;
-	listint_t *front = *head;
-	listint_t *tmp = *head;
+	int l[2000];
+	int fp = 0, bp = 0, n = 0;
+	listint_t *current = *head;
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (*head == NULL || current->next == NULL)
 		return (1);
-	while (tmp->next != NULL)
+
+	while (current != NULL)
 	{
-		tmp = tmp->next;
+		l[n] = current->n;
+		current = current->next;
+		n += 1;
+
 	}
-	back = tmp;
-	while (front != back)
+
+
+	bp = n - 1;
+
+	while (fp != bp && fp < n)
 	{
-		if (front->n != back->n)
+		/*printf("%d <==> %d\n",l[fp],l[bp]);*/
+		if (l[fp] != l[bp])
 		{
+			/*printf("%d <==> %d\n",l[fp],l[bp]);*/
 			return (0);
 		}
-		front = front->next;
-		back = get_prev_node(front, back);
+		fp = fp + 1;
+		bp = bp - 1;
 	}
 	return (1);
 }
