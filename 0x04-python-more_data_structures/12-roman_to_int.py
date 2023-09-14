@@ -15,5 +15,5 @@ def roman_to_int(roman_string):
     i = 0
     while i < len(roman_string):
         res += roman_to_int_dict[roman_string[i]]
-        i +=1
+        i += 1
     return res
