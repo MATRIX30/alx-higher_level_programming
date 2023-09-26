@@ -22,7 +22,7 @@ def safe_print_list_integers(my_list=[], x=0):
                     print("{:d}".format(my_list[i]), end="")
                     print_count += 1
                 i += 1
-        except IndexError:
-            pass
+        except IndexError as ex:
+            raise(ex)
     print(end="\n")
     return (print_count)
