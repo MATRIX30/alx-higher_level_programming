@@ -12,17 +12,14 @@ def safe_print_list_integers(my_list=[], x=0):
     """
 
     print_count = 0
-    if ((x == 0) or my_list == []):
-        return (print_count)
-    else:
-        i = 0
-        try:
-            while (i < x):
-                if isinstance(my_list[i], int):
-                    print("{:d}".format(my_list[i]), end="")
-                    print_count += 1
-                i += 1
-        except IndexError as ex:
-            raise(ex)
+    i = 0
+    try:
+        while (i < x):
+            if isinstance(my_list[i], int):
+                print("{:d}".format(my_list[i]), end="")
+                print_count += 1
+            i += 1
+    except IndexError as ex:
+        pass
     print(end="\n")
     return (print_count)
