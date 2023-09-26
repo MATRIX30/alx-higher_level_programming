@@ -9,10 +9,10 @@ import math
 
 
 class MagicClass:
-    """This is the definition of the class MagicClass
+    """This is the definition of the class MagicClass (Circle)
     from scracth
     """
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """main init function of the class
 
         Args:
