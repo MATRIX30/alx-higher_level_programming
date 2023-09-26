@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+"""Magicclasss in action"""
+
 
 import math
 """This is a magic class that is the exact representaion as the
