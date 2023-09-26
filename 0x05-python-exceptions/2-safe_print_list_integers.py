@@ -24,6 +24,6 @@ def safe_print_list_integers(my_list=[], x=0):
                 i += 1
             print(end="\n")
             return (print_count)
-        except IndexError as ex:
-            raise(ex)
+        except IndexError:
+            pass
     
