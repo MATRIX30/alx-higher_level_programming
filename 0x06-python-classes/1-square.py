@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""This is the square class
-"""
+"""This is the square class """
 
 
 class Square:
@@ -12,4 +11,4 @@ class Square:
         Args:
             size: size of square
          """
-        self._size = size
+        self.__size = size
