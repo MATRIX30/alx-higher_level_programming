@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-def safe_print_division(a: int, b: int)-> float:
+def safe_print_division(a: int, b: int) -> float:
     try:
         res = a / b
     except ZeroDivisionError as z:
@@ -8,4 +8,3 @@ def safe_print_division(a: int, b: int)-> float:
     finally:
         print("Inside result: {}".format(res))
         return res
-        
