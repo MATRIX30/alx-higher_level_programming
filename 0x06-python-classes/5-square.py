@@ -50,12 +50,12 @@ class Square:
         if (self.__size == 0):
             print(end="\n")
         else:
-            i = 0 
+            i = 0
             j = 0
             while (i < self.__size):
                 while (j < self.__size):
                     print("#", end="")
                     j += 1
-                print(end = "\n")
+                print(end="\n")
                 j = 0
                 i += 1
