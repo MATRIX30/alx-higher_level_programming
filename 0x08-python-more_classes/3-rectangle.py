@@ -78,9 +78,9 @@ class Rectangle:
         for i in range(0, self.__height):
             for j in range(0, self.__width):
                 str_rep += "#"
-                #print("#", end="")
-            
+                # print("#", end="")
+
             if i < self.__height - 1:
-                #print("\n")
+                # print("\n")
                 str_rep += "\n"
         return str_rep
