@@ -17,17 +17,6 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = width
 
-    def __str__(self) -> str:
-        str_rep = ""
-        for i in range(0, self.__height):
-            for j in range(0, self.__width):
-                str_rep += "#"
-                # print("#", end="")
-            # print("\n")
-            if i < self.__height - 1:
-                str_rep += "\n"
-        return str_rep
-
     @property
     def width(self):
         """getter for width
@@ -81,3 +70,14 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return 0
         return 2 * (self.__height + self.__width)
+
+    def __str__(self) -> str:
+        str_rep = ""
+        for i in range(0, self.__height):
+            for j in range(0, self.__width):
+                str_rep += "#"
+                # print("#", end="")
+            # print("\n")
+            if i < self.__height - 1:
+                str_rep += "\n"
+        return str_rep
