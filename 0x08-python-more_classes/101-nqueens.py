@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+"""This is a module to play the N queen problem"""
 import sys
 
 
