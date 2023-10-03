@@ -127,4 +127,4 @@ class Rectangle:
         Returns:
             Rectangle: a square representation of a rectangle
         """
-        return (cls(size, size))
+        return cls(size, size)
