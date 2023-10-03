@@ -17,17 +17,17 @@ Attributes:
 from sys import argv
 
 if len(argv) is not 2:
-    print('Usage: nqueens N')
+    print("Usage: nqueens N")
     exit(1)
 
 if not argv[1].isdigit():
-    print('N must be a number')
+    print("N must be a number")
     exit(1)
 
 N = int(argv[1])
 
 if N < 4:
-    print('N must be at least 4')
+    print("N must be at least 4")
     exit(1)
 
 
@@ -126,6 +126,7 @@ def coordinate_format(candidates):
                     holberton[x][i].append(i)
                     holberton[x][i].append(j)
     return holberton
+
 
 # init candidates list with first column of 0s
 candidates = []
