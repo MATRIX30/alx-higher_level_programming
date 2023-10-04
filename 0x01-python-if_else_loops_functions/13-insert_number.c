@@ -50,6 +50,6 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	else
 	{
-		return (add_nodeint_end(&cur, number));
+		return (add_nodeint_end(head, number));
 	}
 }
