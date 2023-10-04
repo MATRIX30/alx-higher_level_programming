@@ -1,0 +1,25 @@
+ >>> print_square(2)
+##
+##
+>>> print_square(0)
+
+>>> print_square(-2)
+Traceback (most recent call last):
+		...
+ValueError: size must be >= 0
+>>> print_square(3.23)
+###
+###
+###
+>>> print_square(-3.2)
+Traceback (most recent call last):
+		...
+TypeError: size must be an integer
+>>> print_square("alx")
+Traceback (most recent call last):
+		...
+TypeError: size must be an integer
+>>> print_square("five")
+Traceback (most recent call last):
+		...
+TypeError: size must be an integer
