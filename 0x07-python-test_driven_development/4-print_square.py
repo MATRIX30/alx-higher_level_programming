@@ -7,8 +7,6 @@ def print_square(size):
 
     Args:
             size (int): the size of the square to print
-
-   
     """
     if isinstance(size, float):
         if size < 0:
