@@ -57,11 +57,6 @@ Testing with NaN value
 		...
 	ValueError: cannot convert float NaN to integer
 
-Testing with abituary Na string on b
-	>>> add_integer(3, float('NaN'))
-	Traceback (most recent call last):
-		...
-	ValueError: could not convert string to float: 'Na'
 
 Testing with None input
 	>>> add_integer(None)
