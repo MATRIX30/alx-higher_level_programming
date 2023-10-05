@@ -17,7 +17,10 @@ size of 0
 
 size blank
 	>>> print_square()
-
+	Traceback (most recent call last):
+		...
+	TypeError: print_square() missing 1 required positional argument: 'size'
+	
 size is negative
 	>>> print_square(-2)
 	Traceback (most recent call last):
