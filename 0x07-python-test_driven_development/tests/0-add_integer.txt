@@ -7,5 +7,64 @@ This is an example text file in reStructuredText format.
 
 First import ``add_integer`` from the ``0-add_integer`` module:
 >>> add_integer = __import__('0-add_integer').add_integer
+Testing both inputs on Zero
+	>>> add_integer(0, 0)
+	0
 
+Testing on both negative values
+	>>> add_integer(-1, -1)
+	-2
 
+Testing on negative floating point inputs
+	>>> add_integer(-2.5, -3.5)
+	-5
+
+Testing on value of Zero for a and no input with b
+>>> add_integer(0)
+98
+
+Testing with no inputs
+	>>> add_integer()
+	Traceback (most recent call last):
+		...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Testing with a not as an integer while b is an integer
+	>>> add_integer((3,5), 3)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Testing with a value of a and str for b
+	>>> add_integer(2, "alx")
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+Testing with multiple calls to add_integer
+	>>> [add_integer(x, y) for x,y in [(1,2),(4,8),(0,0),(-1, 2.4)]]
+	[3, 12, 0, 1]
+
+Testing with infinity value infinity
+	>>> add_integer(3, float('inf'))
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
+
+Testing with NaN value
+	>>> add_integer(3, float('NaN'))
+	Traceback (most recent call last):
+		...
+	ValueError: cannot convert float NaN to integer
+
+Testing with abituary Na string on b
+	>>> add_integer(3, float('NaN'))
+	Traceback (most recent call last):
+		...
+	ValueError: could not convert string to float: 'Na'
+
+Testing with None input
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
