@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ This module contains a fucntion
-    to say your name in the format 
+    to say your name in the format
     <first name> <last name>
 """
 
