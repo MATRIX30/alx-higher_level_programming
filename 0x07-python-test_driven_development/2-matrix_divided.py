@@ -33,6 +33,6 @@ def matrix_divided(matrix, div):
                     "matrix must be a matrix (list of lists)"
                     " of integers/floats"
                 )
-            tmp.append(j / div)
+            tmp.append(round(j / div, 2))
         res.append(tmp)
     return res
