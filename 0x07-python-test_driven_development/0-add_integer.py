@@ -22,4 +22,8 @@ def add_integer(a, b=98):
         a = int(a)
     if isinstance(b, float):
         b = int(b)
+    if b == float("inf") or b == float("-inf"):
+        raise OverflowError("cannot convert float infinity to integer")
+    if b == float("NaN"):
+        raise ValueError("cannot convert float NaN to integer")
     return a + b

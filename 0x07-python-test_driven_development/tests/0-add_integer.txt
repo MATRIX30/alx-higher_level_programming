@@ -48,18 +48,18 @@ Testing with multiple calls to add_integer
 
 Testing with infinity value infinity
 	>>> add_integer(3, float('inf'))
-	Traceback (most recent call last)
+	Traceback (most recent call last):
 		...
 	OverflowError: cannot convert float infinity to integer
 
 Testing with NaN value
 	>>> add_integer(3, float('NaN'))
-	Traceback (most recent call last)
+	Traceback (most recent call last):
 		...
 	ValueError: cannot convert float NaN to integer
 
 Testing with abituary Na string on b
 	>>> add_integer(3, float('NaN'))
-	Traceback (most recent call last)
+	Traceback (most recent call last):
 		...
 	ValueError: could not convert string to float: 'Na'
