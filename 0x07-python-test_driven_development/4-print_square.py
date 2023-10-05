@@ -9,19 +9,19 @@ def print_square(size):
             size (int): the size of the square to print
     """
     if size is None:
-        raise TypeError("print_square() missing 1 required positional argument: 'size'")
+        raise TypeError("print_square() missing 1 required"
+                        " positional argument: 'size'")
     if size == float("inf"):
         raise OverflowError("cannot convert float infinity to integer")
     if isinstance(size, float):
         if size < 0:
             raise TypeError("size must be an integer")
         size = int(size)
-    
+
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:
         raise ValueError("size must be >= 0")
-    
 
     for i in range(0, size):
         for j in range(size):
