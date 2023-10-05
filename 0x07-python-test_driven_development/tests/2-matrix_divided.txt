@@ -60,5 +60,6 @@ Traceback (most recent call last):
     ...
 TypeError: matrix_divided() takes 2 positional arguments but 3 were given
 
-
-    
+Testing div with infinity value
+    >>> matrix_divided([[6.2,3,1],[3,5.2,0]], float("inf"))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
