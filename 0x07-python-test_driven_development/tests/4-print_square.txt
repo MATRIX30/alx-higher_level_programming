@@ -1,25 +1,55 @@
- >>> print_square(2)
-##
-##
->>> print_square(0)
+ doctest for ```print_square``` module
+=========================================
 
->>> print_square(-2)
-Traceback (most recent call last):
-		...
-ValueError: size must be >= 0
->>> print_square(3.23)
-###
-###
-###
->>> print_square(-3.2)
-Traceback (most recent call last):
-		...
-TypeError: size must be an integer
->>> print_square("alx")
-Traceback (most recent call last):
-		...
-TypeError: size must be an integer
->>> print_square("five")
-Traceback (most recent call last):
-		...
-TypeError: size must be an integer
+Usage: Run python3 -m doctest ./tests/4-print_square.txt on the terminal to run test
+       on ```print_square```
+
+importing the module
+>>> print_square = __import__('4-print_square').print_square
+
+size of 2
+	>>> print_square(2)
+	##
+	##
+
+size of 0
+	>>> print_square(0)
+
+size blank
+	>>> print_square()
+
+size is negative
+	>>> print_square(-2)
+	Traceback (most recent call last):
+			...
+	ValueError: size must be >= 0
+
+size is float
+	>>> print_square(3.23)
+	###
+	###
+	###
+
+size is negative float
+	>>> print_square(-3.2)
+	Traceback (most recent call last):
+			...
+	TypeError: size must be an integer
+
+size of string 
+	>>> print_square("alx")
+	Traceback (most recent call last):
+			...
+	TypeError: size must be an integer
+
+size of string 
+	>>> print_square("five")
+	Traceback (most recent call last):
+			...
+	TypeError: size must be an integer
+
+size float("inf")
+	>>> print_square(float("inf"))
+	Traceback (most recent call last):
+			...
+	OverflowError: cannot convert float infinity to integer
