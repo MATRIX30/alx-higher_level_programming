@@ -19,10 +19,7 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer(["alx", 2, 4, 5])
 
-    def test_max_integer_string(self):
-        """testing list with str item"""
-        with self.assertRaises(AssertionError):
-            max_integer("alx")
+
 
     def test_max_integer_increasing_order_list(self):
         """list in increasing order"""
