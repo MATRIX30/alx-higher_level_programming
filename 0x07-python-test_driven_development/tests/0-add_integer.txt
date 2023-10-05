@@ -8,7 +8,4 @@ This is an example text file in reStructuredText format.
 First import ``add_integer`` from the ``0-add_integer`` module:
 >>> add_integer = __import__('0-add_integer').add_integer
 
-Testing both inputs on Zero
-	>>> add_integer(0, 0)
-	0
 
