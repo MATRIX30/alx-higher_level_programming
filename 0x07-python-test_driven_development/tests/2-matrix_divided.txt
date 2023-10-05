@@ -1,4 +1,11 @@
-matrix_divided = __import__('2-matrix_divided').matrix_divided
+doctest for ```matrix_divided``` module
+=========================================
+
+Usage: Run python3 -m doctest ./tests/2-matrix_divided.txt on the terminal to run test
+       on ```matrix_divided ```
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
 >>> matrix_divided()
 Traceback (most recent call last):
     ...
