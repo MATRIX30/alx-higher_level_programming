@@ -22,4 +22,4 @@ def add_integer(a, b=98):
         a = int(a)
     if isinstance(b, float):
         b = int(b)
-    return int(a + b)
+    return a + b
