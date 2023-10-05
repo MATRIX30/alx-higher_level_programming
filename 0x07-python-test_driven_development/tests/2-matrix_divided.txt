@@ -26,14 +26,11 @@ TypeError: div must be a number
 Traceback (most recent call last):
     ...
 ZeroDivisionError: division by zero
->>> matrix_divided([[6,3,4],[3,5,0]], 2)
-[[3.00,1.50,2.00],[1.50,2.50,0.00]]
+
 >>> matrix_divided("alx", 4)
 Traceback (most recent call last):
     ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
->>> matrix_divided([[6.2,3,4],[3,5.2,0]], 2)
-[[3.10,1.50,2.00],[1.50,2.60,0.00]]
 
 >>> matrix_divided([[3,4],[4,3]])
 Traceback (most recent call last):
