@@ -1,0 +1,44 @@
+ Doctets Module to test ```base_geometry```
+====================================
+
+Usage: python3 -m doctest ./test/7-base_geometry.txt
+
+importing the class
+-------------------------------------
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+creating a class object
+	>>> bg = BaseGeometry()
+
+Testing with correct inputs
+	>>> bg.integer_validator("alx", 34)
+	Traceback (most recent call last):
+        ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+Testing for value <= 0 enteere
+	>>> bg.integer_validator("two", -23)
+	Traceback (most recent call last):
+        ...
+    ValueError: two must be greater than 0
+
+Testing with correct inputs
+	>>>bg.integer_validator("alx", 34)
+	
+Testing with correct inputs
+	>>>bg.integer_validator("alx", float(inf))
+	Traceback (most recent call last):
+        ...
+    TypeError: alx must be greater than 0
+
+Testing with correct inputs
+	>>>bg.integer_validator("alx", 34.0)
+	Traceback (most recent call last):
+        ...
+    TypeError: alx must be greater than 0
+
+Testing with correct inputs
+	>>>bg.integer_validator("alx", 34)
+	Traceback (most recent call last):
+        ...
+    TypeError: print_square() missing 1 required positiona
