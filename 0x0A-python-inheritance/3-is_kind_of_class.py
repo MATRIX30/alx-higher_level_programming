@@ -11,5 +11,5 @@ def is_kind_of_class(obj, a_class):
             obj (_type_): object to test its class
             a_class (class): class to test
     """
-    
-    return (isinstance(obj, a_class) or issubclass(type(obj), a_class))
+
+    return isinstance(obj, a_class) or issubclass(type(obj), a_class)
