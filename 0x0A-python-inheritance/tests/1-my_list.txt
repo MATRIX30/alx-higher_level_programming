@@ -1,0 +1,7 @@
+This is test Module for ```my_list```
+============================================
+
+Usage: python3 -m doctest ./tests/my_list.txt
+---------------------------------------------
+importing my_list Module
+	>>> print_sorted = __import__('1-my_list').MyList.print_sorted
