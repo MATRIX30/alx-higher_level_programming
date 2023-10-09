@@ -9,7 +9,4 @@ def is_same_class(obj, a_class):
             obj (_type_): object to test its class
             a_class (class): class to test
     """
-    if isinstance(obj, a_class):
-        if not issubclass(obj, a_class):
-            return True
-    return False
+    return type(obj) is a_class
