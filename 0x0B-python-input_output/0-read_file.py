@@ -3,10 +3,11 @@
 
 
 def read_file(filename=""):
-    """method to read from file
+    """Reads a text file (UTF8) and prints it to stdout.
 
     Args:
-            filename (str, optional): filename to read from. Defaults to "".
+      filename: The path to the text file to read.
     """
-    with open(filename, 'r', encoding='utf8') as f:
+
+    with open(filename, "r", encoding="utf8") as f:
         print(f.read())
