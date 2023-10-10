@@ -8,7 +8,7 @@
 import json
 
 
-def load_from_json_file(my_obj, filename):
+def load_from_json_file(filename):
     """
     function to load an objec from a text file
     using json representation
