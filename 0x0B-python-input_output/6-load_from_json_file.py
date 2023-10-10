@@ -16,5 +16,5 @@ def load_from_json_file(filename):
                     my_obj: objecto to be created or loaded
                     filename: file where object is loaded from
     """
-    with open(filename, "r+") as f:
+    with open(filename, "r") as f:
         return json.load(f)
