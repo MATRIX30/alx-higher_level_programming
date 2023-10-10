@@ -3,6 +3,8 @@
 
 
 class MyInt(int):
+    """stubborn my class that inherits from int"""
+
     def __ne__(self, other) -> bool:
         """override not equal sign"""
         if self != other:
