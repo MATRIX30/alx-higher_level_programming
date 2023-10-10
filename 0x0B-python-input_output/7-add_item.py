@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-import sys
-import json
-import os
 """	script to add all arguments to as python list
     and then save them to a file
 """
 
-"""importing necesarry modules"""
 
+import sys
+import json
+import os
 
 # import importlib
 # save_to_json_file = importlib.import_module("5-save_to_json_file")
