@@ -1,17 +1,13 @@
 #!/usr/bin/python3
-"""
-Read file function
-"""
+"""module for a function that reads from a file in utf-8 encoding"""
 
 
 def read_file(filename=""):
-    """read a file
-    args:
-        filename: file to manipulate
-    return:
-        na
+    """Reads a text file (UTF8) and prints it to stdout.
+
+    Args:
+      filename: The path to the text file to read.
     """
 
-    with open(filename, encoding="utf-8") as f:
-        for line in f.read():
-            print(line, end="")
+    with open(filename, "r", encoding="utf-8") as f:
+        print(f.read())
