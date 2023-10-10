@@ -1,0 +1,41 @@
+ Doctets Module to test ```base_geometry```
+====================================
+
+Usage: python3 -m doctest ./test/7-base_geometry.txt
+
+importing the class
+-------------------------------------
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+creating a class object
+	>>> bg = BaseGeometry()
+
+Testing with correct inputs
+	>>> bg.integer_validator("alx", 34)
+		
+
+Testing value as string
+	>>> bg.integer_validator("alx", "dk")
+		Traceback (most recent call last):
+			...
+		TypeError: alx must be an integer
+
+Testing for value <= 0 enteere
+	>>> bg.integer_validator("two", -23)
+		Traceback (most recent call last):
+			...
+		ValueError: two must be greater than 0
+
+Testing with correct inputs
+	>>> bg.integer_validator("alx", 34)
+		
+
+Testing with correct inputs
+	>>> bg.integer_validator("alx", 34.0)
+		Traceback (most recent call last):
+			...
+		TypeError:alx must be an integer 
+
+Testing with correct inputs
+	>>> bg.integer_validator("", 34)
+		
