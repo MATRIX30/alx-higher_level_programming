@@ -13,7 +13,7 @@ def pascal_triangle(n):
     """
     # test if n is <= 0 and return empty list
     if n <= 0:
-        return []
+        return [[]]
     if n == 1:
         return [1]
     if n == 2:
