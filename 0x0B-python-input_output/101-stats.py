@@ -23,7 +23,7 @@ if __name__ == "__main__":
     file_size = 0
     st_code = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
     counter = 0
-    code = 0
+    code = 1
     try:
         for line in sys.stdin:
             line_dic = line.split(" ")
@@ -31,7 +31,7 @@ if __name__ == "__main__":
                 print("File size: {}".format(file_size))
                 for key, value in st_code.items():
                     print("{}: {}".format(key, value))
-                counter = 0
+                counter = 1
             code = int(line_dic[-2])
             if code in st_code:
                 st_code[code] += 1
