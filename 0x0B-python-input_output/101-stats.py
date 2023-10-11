@@ -39,6 +39,6 @@ if __name__ == "__main__":
             counter += 1
     except (KeyboardInterrupt, Exception):
         print("File size: {}".format(file_size))
-        for key, value in st_code.items():
+        for key, value in sorted(st_code.items()):
             print("{}: {}".format(key, value))
         raise
