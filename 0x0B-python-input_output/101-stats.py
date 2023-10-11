@@ -22,26 +22,23 @@ if __name__ == "__main__":
 
     res = "printing stats"
     file_size = 0
-    status_code = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+    st_code = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
     counter = 0
     code = 0
     try:
-      for line in sys.stdin:
-          line_dic = line.split(" ")
-          if counter == 10:
-              print("File size: {}".format(file_size))
-              for key, value in status_code.items():
-                print("{}: {}".format(key, value))
-              counter = 0
-          code = int(line_dic[-2])
-          if code in status_code:
-            status_code[code] += 1
-          file_size += int(line_dic[-1])
-          counter += 1
+        for line in sys.stdin:
+            line_dic = line.split(" ")
+            if counter == 10:
+                print("File size: {}".format(file_size))
+                for key, value in st_code.items():
+                    print("{}: {}".format(key, value))
+                counter = 0
+            code = int(line_dic[-2])
+            if code in st_code:
+                st_code[code] += 1
+            file_size += int(line_dic[-1])
+            counter += 1
     except (KeyboardInterrupt, Exception) as e:
-      print("File size: {}".format(file_size))
-      for key, value in status_code.items():
-        print("{}: {}".format(key, value))
-     
-    
-      
+        print("File size: {}".format(file_size))
+        for key, value in st_code.items():
+            print("{}: {}".format(key, value))
