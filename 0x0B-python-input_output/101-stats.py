@@ -20,7 +20,6 @@ prints those statistics since the beginning:
 if __name__ == "__main__":
     import sys
 
-    res = "printing stats"
     file_size = 0
     st_code = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
     counter = 0
@@ -38,7 +37,8 @@ if __name__ == "__main__":
                 st_code[code] += 1
             file_size += int(line_dic[-1])
             counter += 1
-    except (KeyboardInterrupt, Exception) as e:
+    except (KeyboardInterrupt, Exception):
         print("File size: {}".format(file_size))
         for key, value in st_code.items():
             print("{}: {}".format(key, value))
+        raise
