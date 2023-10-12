@@ -34,15 +34,15 @@ if __name__ == "__main__":
     code = 0
     try:
         for line in sys.stdin:
-            line_dic = line.split(" ")
+            line_lst = line.split(" ")
             if counter == 10:
                 print_data(file_size, status_code)
-                counter = 0
+                counter = 1
             try:
-                code = int(line_dic[-2])
+                code = int(line_lst[-2])
                 if code in status_code:
                     status_code[code] += 1
-                    file_size += int(line_dic[-1])
+                    file_size += int(line_lst[-1])
             except Exception:
                 pass
             counter += 1
