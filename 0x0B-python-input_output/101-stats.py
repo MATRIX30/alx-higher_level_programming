@@ -48,7 +48,7 @@ if __name__ == "__main__":
                 pass
             counter += 1
 
-    except (KeyboardInterrupt, Exception):
+    except KeyboardInterrupt:
         print_data(file_size, status_code)
         raise
     print_data(file_size, status_code)
