@@ -41,7 +41,7 @@ if __name__ == "__main__":
                 counter = 0
             try:
                 file_size += int(line_lst[-1])
-            except(IndexError, ValueError):
+            except (IndexError, ValueError):
                 pass
             try:
                 code = int(line_lst[-2])
