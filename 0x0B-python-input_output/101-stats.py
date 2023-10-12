@@ -20,6 +20,12 @@ prints those statistics since the beginning:
 if __name__ == "__main__":
     import sys
 
+    def print_data(file_size: int, status_code: dict) -> None:
+        """method to print log data"""
+        print("File size: {}".format(file_size))
+        for key, value in sorted(status_code.items()):
+            print("{}: {}".format(key, value))
+
     file_size = 0
     status_code = {200: 0, 301: 0, 400: 0, 401: 0,
                    403: 0, 404: 0, 405: 0, 500: 0}
@@ -29,9 +35,7 @@ if __name__ == "__main__":
         for line in sys.stdin:
             line_dic = line.split(" ")
             if counter == 10:
-                print("File size: {}".format(file_size))
-                for key, value in sorted(status_code.items()):
-                    print("{}: {}".format(key, value))
+                print_data(file_size, status_code)
                 counter = 0
 
             code = int(line_dic[-2])
@@ -39,12 +43,8 @@ if __name__ == "__main__":
                 status_code[code] += 1
                 file_size += int(line_dic[-1])
             counter += 1
-
-        print("File size: {}".format(file_size))
-        for key, value in sorted(status_code.items()):
-            print("{}: {}".format(key, value))
+            
+        print_data(file_size, status_code)
     except (KeyboardInterrupt, Exception):
-        print("File size: {}".format(file_size))
-        for key, value in sorted(status_code.items()):
-            print("{}: {}".format(key, value))
+        print_data(file_size, status_code)
         raise
