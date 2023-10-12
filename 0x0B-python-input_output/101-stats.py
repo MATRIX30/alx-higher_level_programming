@@ -37,11 +37,13 @@ if __name__ == "__main__":
             if counter == 10:
                 print_data(file_size, status_code)
                 counter = 0
-
-            code = int(line_dic[-2])
-            if code in status_code:
-                status_code[code] += 1
-                file_size += int(line_dic[-1])
+            try:
+                code = int(line_dic[-2])
+                if code in status_code:
+                    status_code[code] += 1
+                    file_size += int(line_dic[-1])
+            except Exception:
+                pass
             counter += 1
 
         print_data(file_size, status_code)
