@@ -29,7 +29,7 @@ You will also learn about:
 - Serialization/Deserialization
 - JSON
 
-![dog](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/331/giphy.mp4)
+[dog](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/331/giphy.mp4)
 ### Resources
 Read or watch:
 
