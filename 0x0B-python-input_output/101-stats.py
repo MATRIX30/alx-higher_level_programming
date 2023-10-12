@@ -39,9 +39,13 @@ if __name__ == "__main__":
                 status_code[code] += 1
                 file_size += int(line_dic[-1])
             counter += 1
-
+            
+        print("File size: {}".format(file_size))
+        for key, value in sorted(status_code.items()):
+            print("{}: {}".format(key, value))
     except (KeyboardInterrupt, Exception):
         print("File size: {}".format(file_size))
         for key, value in sorted(status_code.items()):
             print("{}: {}".format(key, value))
         raise
+        
