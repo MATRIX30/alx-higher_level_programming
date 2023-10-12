@@ -21,9 +21,8 @@ def print_data(file_size: int, status_code: dict) -> None:
     """method to print log data"""
     print("File size: {}".format(file_size))
     for key, value in sorted(status_code.items()):
-        if value == 0:
-            continue
-        print("{}: {}".format(key, value))
+        if value != 0:
+            print("{}: {}".format(key, value))
 
 
 if __name__ == "__main__":
