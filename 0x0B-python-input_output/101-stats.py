@@ -43,7 +43,7 @@ if __name__ == "__main__":
                 code = int(line_lst[-2])
                 if code in status_code:
                     status_code[code] += 1
-                    file_size += int(line_lst[-1])
+                file_size += int(line_lst[-1])
             except Exception:
                 pass
             counter += 1
