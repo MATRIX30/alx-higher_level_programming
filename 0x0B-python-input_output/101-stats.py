@@ -38,7 +38,7 @@ if __name__ == "__main__":
             line_lst = line.split(" ")
             if counter == 10:
                 print_data(file_size, status_code)
-                counter = 1
+                counter = 0
             try:
                 code = int(line_lst[-2])
                 if code in status_code:
