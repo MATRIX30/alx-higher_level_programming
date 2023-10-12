@@ -48,11 +48,12 @@ if __name__ == "__main__":
                 if code in status_code:
                     status_code[code] += 1
 
-            except IndexError:
+            except Exception:
                 pass
             counter += 1
 
+        print_data(file_size, status_code)
     except KeyboardInterrupt:
         print_data(file_size, status_code)
         raise
-    print_data(file_size, status_code)
+    
