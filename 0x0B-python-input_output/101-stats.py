@@ -20,8 +20,8 @@ prints those statistics since the beginning:
 def print_data(file_size: int, status_code: dict) -> None:
     """method to print log data"""
     print("File size: {}".format(file_size))
-    for key, value in sorted(status_code.items()):
-        print("{}: {}".format(key, value))
+    for key in sorted(status_code):
+        print("{}: {}".format(key, status_code[key]))
 
 
 if __name__ == "__main__":
