@@ -21,8 +21,9 @@ def print_data(file_size: int, status_code: dict) -> None:
     """method to print log data"""
     print("File size: {}".format(file_size))
     for key, value in sorted(status_code.items()):
-        if value != 0:
-            print("{}: {}".format(key, value))
+        if value == 0:
+            continue
+        print("{}: {}".format(key, value))
 
 
 if __name__ == "__main__":
@@ -39,7 +40,6 @@ if __name__ == "__main__":
             if counter == 10:
                 print_data(file_size, status_code)
                 counter = 0
-            counter += 1
             try:
                 code = int(line_lst[-2])
                 if code in status_code:
@@ -47,7 +47,7 @@ if __name__ == "__main__":
                     file_size += int(line_lst[-1])
             except Exception:
                 pass
-            
+            counter += 1
 
         print_data(file_size, status_code)
     except (KeyboardInterrupt, Exception):
