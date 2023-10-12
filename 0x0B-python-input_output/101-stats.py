@@ -41,9 +41,6 @@ if __name__ == "__main__":
                 counter = 0
             try:
                 file_size += int(line_lst[-1])
-            except (IndexError, ValueError):
-                pass
-            try:
                 code = int(line_lst[-2])
                 if code in status_code:
                     status_code[code] += 1
@@ -56,4 +53,3 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print_data(file_size, status_code)
         raise
-    
