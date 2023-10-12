@@ -32,7 +32,7 @@ if __name__ == "__main__":
     status_code = {200: 0, 301: 0, 400: 0, 401: 0,
                    403: 0, 404: 0, 405: 0, 500: 0}
     counter = 0
-   
+
     try:
         for line in sys.stdin:
             line_lst = line.split(" ")
@@ -48,7 +48,7 @@ if __name__ == "__main__":
                 pass
             counter += 1
 
-        print_data(file_size, status_code)
     except (KeyboardInterrupt, Exception):
         print_data(file_size, status_code)
         raise
+    print_data(file_size, status_code)
