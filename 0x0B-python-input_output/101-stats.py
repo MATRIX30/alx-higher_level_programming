@@ -43,7 +43,7 @@ if __name__ == "__main__":
                 status_code[code] += 1
                 file_size += int(line_dic[-1])
             counter += 1
-            
+
         print_data(file_size, status_code)
     except (KeyboardInterrupt, Exception):
         print_data(file_size, status_code)
