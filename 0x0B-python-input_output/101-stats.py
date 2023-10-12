@@ -39,6 +39,7 @@ if __name__ == "__main__":
             if counter == 10:
                 print_data(file_size, status_code)
                 counter = 0
+            counter += 1
             try:
                 code = int(line_lst[-2])
                 if code in status_code:
@@ -46,7 +47,7 @@ if __name__ == "__main__":
                     file_size += int(line_lst[-1])
             except Exception:
                 pass
-            counter += 1
+            
 
         print_data(file_size, status_code)
     except (KeyboardInterrupt, Exception):
