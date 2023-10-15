@@ -160,27 +160,30 @@ class Rectangle(Base):
             self.y, self.width, self.height
         )
 
-    def update(self, *args):
-        """assignes an argument to each attribute"""
-        if len(args) == 0:
-            pass
-        elif len(args) == 1:
-            self.id = args[0]
-        elif len(args) == 2:
-            self.id = args[0]
-            self.width = args[1]
-        elif len(args) == 3:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-        elif len(args) == 4:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute
+           using args and keyword args **kwargs
+        
+        """
+        if bool(args):
+            if len(args) == 1:
+                self.id = args[0]
+            elif len(args) == 2:
+                self.id, self.width = args[:2]
+            elif len(args) == 3:
+                self.id, self.width, self.height = args[:3]
+            elif len(args) == 4:
+                self.id, self.width, self.height, self.x = args[:4]
+            else:
+                self.id, self.width, self.height, self.x, self.y = args
         else:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
+            if "id" in kwargs.keys():
+                self.id = kwargs["id"]
+            if "width" in kwargs.keys():
+                self.width =  kwargs["width"]
+            if "height" in kwargs.keys():
+                self.height = kwargs["height"]
+            if "x" in kwargs.keys():
+                self.x = kwargs["x"] 
+            if "y" in kwargs.keys():
+                self.y = kwargs["y"] 
