@@ -139,7 +139,11 @@ class Rectangle(Base):
 
     def display(self):
         """displays rectangle with using # symbols"""
+        for y in range(self.y):
+            print("", end="\n")
         for i in range(self.height):
+            for x in range(self.x):
+                print(" ", end="")
             for j in range(self.width):
                 print("#", end="")
             print("")
