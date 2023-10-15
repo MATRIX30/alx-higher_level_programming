@@ -134,8 +134,7 @@ class Rectangle(Base):
         self.__x = value
 
     def area(self):
-        """calculates the area of a rectangle
-        """
+        """calculates the area of a rectangle"""
         return self.__width * self.__height
 
     def display(self):
@@ -144,3 +143,14 @@ class Rectangle(Base):
             for j in range(self.width):
                 print("#", end="")
             print("")
+
+    def __str__(self) -> str:
+        """string method of class depics how class
+           class will be printed with print
+
+        Returns:
+            str: string representation of class
+        """
+        return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.__class__.__name__, self.id, self.x, self.y, self.width, self.height
+        )

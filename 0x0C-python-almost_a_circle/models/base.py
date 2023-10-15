@@ -2,16 +2,17 @@
 """Base class module"""
 
 
-class Base():
+class Base:
     """Base class"""
 
     __nb_objects = 0
-    def __init__(self, id = None):
+
+    def __init__(self, id=None):
         """Base class constructor
         Args:
             id (int, optional): class id. Defaults to None.
         """
-        if not id is None:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
