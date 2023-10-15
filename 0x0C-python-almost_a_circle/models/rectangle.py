@@ -156,5 +156,31 @@ class Rectangle(Base):
             str: string representation of class
         """
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
-            self.__class__.__name__, self.id, self.x, self.y, self.width, self.height
+            self.__class__.__name__, self.id, self.x,
+            self.y, self.width, self.height
         )
+
+    def update(self, *args):
+        """assignes an argument to each attribute"""
+        if len(args) == 0:
+            pass
+        elif len(args) == 1:
+            self.id = args[0]
+        elif len(args) == 2:
+            self.id = args[0]
+            self.width = args[1]
+        elif len(args) == 3:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+        elif len(args) == 4:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+        else:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
