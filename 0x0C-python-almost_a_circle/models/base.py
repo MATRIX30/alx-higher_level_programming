@@ -44,15 +44,14 @@ class Base:
         """
 
         if list_objs is None:
-            with open("Base.json", "w") as f:
-                json.dump([], f)
+            pass
 
         else:
+            res = []
+            for obj in list_objs:
+                res.append(obj.to_dictionary())
+            data = cls.to_json_string(res)
             with open("{:s}.json".format(cls.__name__), "w") as f:
-                res = []
-                for obj in list_objs:
-                    res.append(obj.to_dictionary())
-                data = cls.to_json_string(res)
                 f.write(data)
 
     @staticmethod
