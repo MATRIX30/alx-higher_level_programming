@@ -79,12 +79,18 @@ class Base:
              dictionary(dic): double pointer to a dictionary
         """
         if cls.__name__ == "Rectangle":
-            dummy = cls.__new__(cls)
-            dummy.width = 3
-            dummy.height = 6
+            dummy = cls(12, 15)
+
         if cls.__name__ == "Square":
-            dummy = cls.__new__(cls)
-            dummy.size = 5
+            dummy = cls(5)
 
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns alist of instances from a file"""
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        pass
