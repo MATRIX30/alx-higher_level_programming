@@ -49,8 +49,8 @@ class Base:
 
         else:
             res = []
-            for obj in list_objs:
-                res.append(obj.to_dictionary())
+            for i in range(len(list_objs)):
+                res.append(list_objs[i].to_dictionary())
             data = cls.to_json_string(res)
             with open("{:s}.json".format(cls.__name__), "w") as f:
                 f.write(data)
