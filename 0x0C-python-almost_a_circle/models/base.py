@@ -42,18 +42,16 @@ class Base:
             list_objs (_type_): list of instances who inherites of Base
              eg list of Rectangle or list of Square instances
         """
-        filename ="{:s}.json".format(cls.__name__)
 
         if list_objs is None:
-            with open("Base.json", "w") as f:
-                json.dump([], f)
+            pass
 
         else:
             res = []
             for obj in list_objs:
                 res.append(obj.to_dictionary())
             data = cls.to_json_string(res)
-            with open(filename, "w") as f:
+            with open("{:s}.json".format(cls.__name__), "w") as f:
                 f.write(data)
 
     @staticmethod
