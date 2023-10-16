@@ -86,7 +86,16 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """returns alist of instances from a file"""
+        """returns a list of instances from a file"""
+        file_name = "{:s}.json".format(cls.__name__)
+        with open(file_name, "r") as f:
+            json_list = f.read()
+            
+        res = []
+        lst_obj  = cls.from_json_string(json_list)
+        print(type(lst_obj))
+        for obj in lst_obj:
+            res.append(cls.create(**obj))
 
     @staticmethod
     def draw(list_rectangles, list_squares):
