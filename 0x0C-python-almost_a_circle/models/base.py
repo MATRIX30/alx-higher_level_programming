@@ -4,11 +4,11 @@
 
 import json
 
+
 class Base:
     """Base class"""
 
     __nb_objects = 0
-    
 
     def __init__(self, id=None):
         """Base class constructor
@@ -27,7 +27,6 @@ class Base:
         Args:
             list_dictionaries (list): list of dictionaries
         """
-       
 
         if list_dictionaries is None:
             return "[]"
@@ -43,7 +42,6 @@ class Base:
             list_objs (_type_): list of instances who inherites of Base
              eg list of Rectangle or list of Square instances
         """
-        
 
         if not list_objs:
             with open("Base.json", "w") as f:
@@ -70,8 +68,6 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return []
         else:
-            
-
             return json.loads(json_string)
 
     @classmethod
@@ -81,10 +77,10 @@ class Base:
              dictionary(dic): double pointer to a dictionary
         """
         if cls.__name__ == "Rectangle":
-            dummy = cls.__new__(cls,12, 15)
+            dummy = cls.__new__(cls, 12, 15)
 
         if cls.__name__ == "Square":
-            dummy = cls.__new__(cls,5)
+            dummy = cls.__new__(cls, 5)
 
         dummy.update(**dictionary)
         return dummy
@@ -92,9 +88,6 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """returns alist of instances from a file"""
-        
-
-
 
     @staticmethod
     def draw(list_rectangles, list_squares):
