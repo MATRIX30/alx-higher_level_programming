@@ -78,3 +78,5 @@ class Square(Rectangle):
         of the Rectangle class """
         dic = {'id':self.id, 'x':self.x, 'size':self.width, 'y':self.y}
         return dic
+    
+    

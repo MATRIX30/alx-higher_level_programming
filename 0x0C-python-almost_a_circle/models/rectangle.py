@@ -156,14 +156,13 @@ class Rectangle(Base):
             str: string representation of class
         """
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
-            self.__class__.__name__, self.id, self.x,
-            self.y, self.width, self.height
+            self.__class__.__name__, self.id, self.x, self.y, self.width, self.height
         )
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute
-           using args and keyword args **kwargs
-        
+        using args and keyword args **kwargs
+
         """
         if bool(args):
             if len(args) == 1:
@@ -180,10 +179,23 @@ class Rectangle(Base):
             if "id" in kwargs.keys():
                 self.id = kwargs["id"]
             if "width" in kwargs.keys():
-                self.width =  kwargs["width"]
+                self.width = kwargs["width"]
             if "height" in kwargs.keys():
                 self.height = kwargs["height"]
             if "x" in kwargs.keys():
-                self.x = kwargs["x"] 
+                self.x = kwargs["x"]
             if "y" in kwargs.keys():
-                self.y = kwargs["y"] 
+                self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """returns the dictionary representation of
+        objects of this class
+        """
+        dic = {
+            "x": self.x,
+            "width": self.width,
+            "id": self.id,
+            "height": self.height,
+            "y": self.y,
+        }
+        return dic
