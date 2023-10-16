@@ -3,5 +3,9 @@
 
 
 import unittest
+
+
 class TestBase(unittest.TestCase):
+    """Test class for base class"""
+
     pass
