@@ -43,7 +43,7 @@ class Base:
              eg list of Rectangle or list of Square instances
         """
 
-        if list_objs is None:
+        if not list_objs:
             pass
 
         else:
