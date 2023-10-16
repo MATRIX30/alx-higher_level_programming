@@ -3,7 +3,6 @@
 from models.rectangle import Rectangle
 
 if __name__ == "__main__":
-
     try:
         Rectangle(10, "2")
     except Exception as e:
@@ -25,4 +24,3 @@ if __name__ == "__main__":
         Rectangle(10, 2, 3, -1)
     except Exception as e:
         print("[{}] {}".format(e.__class__.__name__, e))
-        

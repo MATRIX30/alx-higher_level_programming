@@ -90,9 +90,9 @@ class Base:
         file_name = "{:s}.json".format(cls.__name__)
         with open(file_name, "r") as f:
             json_list = f.read()
-            
+
         res = []
-        lst_obj  = cls.from_json_string(json_list)
+        lst_obj = cls.from_json_string(json_list)
         print(type(lst_obj))
         for obj in lst_obj:
             res.append(cls.create(**obj))
