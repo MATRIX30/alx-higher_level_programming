@@ -39,7 +39,7 @@ class Base:
 
         Args:
             list_objs (_type_): list of instances who inherites of Base
-            eg list of Rectangle or list of Square instances
+             eg list of Rectangle or list of Square instances
         """
         import json
 
@@ -78,8 +78,13 @@ class Base:
         Args:
              dictionary(dic): double pointer to a dictionary
         """
-
-        dummy = cls.__new__(cls)
+        if cls.__name__ == "Rectangle":
+            dummy = cls.__new__(cls)
+            dummy.width = 3
+            dummy.height = 6
+        if cls.__name__ == "Square":
+            dummy = cls.__new__(cls)
+            dummy.size = 5
 
         dummy.update(**dictionary)
         return dummy
