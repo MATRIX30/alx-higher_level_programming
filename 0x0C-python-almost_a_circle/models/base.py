@@ -43,8 +43,9 @@ class Base:
              eg list of Rectangle or list of Square instances
         """
 
-        if not list_objs:
-            pass
+        if list_objs is None:
+            with open("Base.json", "w") as f:
+                json.dump([], f)
 
         else:
             res = []
