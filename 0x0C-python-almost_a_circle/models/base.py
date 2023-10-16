@@ -43,9 +43,9 @@ class Base:
              eg list of Rectangle or list of Square instances
         """
 
-        if not list_objs:
+        if list_objs is None:
             with open("Base.json", "w") as f:
-                f.write("[]")
+                json.dump([], f)
 
         else:
             with open("{:s}.json".format(cls.__name__), "w") as f:
