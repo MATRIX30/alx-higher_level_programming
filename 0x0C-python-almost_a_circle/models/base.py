@@ -39,7 +39,7 @@ class Base:
 
         Args:
             list_objs (_type_): list of instances who inherites of Base
-                                eg list of Rectangle or list of Square instances
+            eg list of Rectangle or list of Square instances
         """
         import json
 
@@ -71,3 +71,15 @@ class Base:
             import json
 
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set
+        Args:
+             dictionary(dic): double pointer to a dictionary
+        """
+
+        dummy = cls.__new__(cls)
+
+        dummy.update(**dictionary)
+        return dummy
