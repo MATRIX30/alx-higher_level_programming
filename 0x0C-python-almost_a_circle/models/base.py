@@ -4,6 +4,7 @@
 
 import json
 import csv
+import os
 
 
 class Base:
@@ -88,7 +89,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """returns a list of instances from a file"""
-        file_name = "{:s}.json".format(cls.__name__)
+        """file_name = "{:s}.json".format(cls.__name__)
         with open(file_name, "r") as f:
             json_list = f.read()
 
@@ -97,6 +98,22 @@ class Base:
         print(type(lst_obj))
         for obj in lst_obj:
             res.append(cls.create(**obj))
+        """
+        filename = "{}.json".format(cls.__name__)
+
+        if os.path.exists(filename) is False:
+            return []
+
+        with open(filename, "r") as f:
+            list_str = f.read()
+
+        list_cls = cls.from_json_string(list_str)
+        list_ins = []
+
+        for index in range(len(list_cls)):
+            list_ins.append(cls.create(**list_cls[index]))
+
+        return list_ins
 
     @staticmethod
     def draw(list_rectangles, list_squares):
