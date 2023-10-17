@@ -99,7 +99,8 @@ class Base:
         lst_obj = cls.from_json_string(json_list)
 
         for obj in lst_obj:
-            res.append(cls.create(**obj))
+            new = cls.create(**obj)
+            res.append(new)
         return res
 
     @staticmethod
