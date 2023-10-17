@@ -156,7 +156,8 @@ class Rectangle(Base):
             str: string representation of class
         """
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
-            self.__class__.__name__, self.id, self.x, self.y, self.width, self.height
+            self.__class__.__name__, self.id, self.x, self.y,
+            self.width, self.height
         )
 
     def update(self, *args, **kwargs):
