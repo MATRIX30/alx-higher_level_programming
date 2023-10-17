@@ -117,6 +117,7 @@ class Base:
 
     @staticmethod
     def drawi(list_rectangles, list_squares):
+        """sd"""
         pass
 
     # delete this and work on it
