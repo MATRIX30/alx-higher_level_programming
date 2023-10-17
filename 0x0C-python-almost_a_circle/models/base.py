@@ -90,17 +90,17 @@ class Base:
     def load_from_file(cls):
         """returns a list of instances from a file"""
         file_name = "{:s}.json".format(cls.__name__)
-        with open(file_name, "r") as f:
-            json_list = f.read()
-
         res = []
         if not os.path.exists(file_name):
             return []
+
+        with open(file_name, "r") as f:
+            json_list = f.read()
+
         lst_obj = cls.from_json_string(json_list)
 
         for obj in lst_obj:
-            new = cls.create(**obj)
-            res.append(new)
+            res.append(cls.create(**obj))
         return res
 
     @staticmethod
