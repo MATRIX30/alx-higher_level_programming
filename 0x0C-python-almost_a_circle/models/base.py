@@ -94,10 +94,13 @@ class Base:
             json_list = f.read()
 
         res = []
+        if not os.path.exists(file_name):
+            return res
         lst_obj = cls.from_json_string(json_list)
-        print(type(lst_obj))
+
         for obj in lst_obj:
             res.append(cls.create(**obj))
+        return res
 
     @staticmethod
     def drawi(list_rectangles, list_squares):
