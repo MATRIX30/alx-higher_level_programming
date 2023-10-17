@@ -78,10 +78,11 @@ class Base:
              dictionary(dic): double pointer to a dictionary
         """
         if cls.__name__ == "Rectangle":
-            dummy = cls(12, 15)
+            print("helo")
+            dummy = cls(1, 1)
 
-        else:
-            dummy = cls(5)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
 
         dummy.update(**dictionary)
         return dummy
