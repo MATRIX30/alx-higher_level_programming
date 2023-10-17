@@ -95,7 +95,7 @@ class Base:
 
         res = []
         if not os.path.exists(file_name):
-            pass
+            return []
         lst_obj = cls.from_json_string(json_list)
 
         for obj in lst_obj:
