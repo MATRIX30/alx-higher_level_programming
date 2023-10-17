@@ -92,7 +92,7 @@ class Base:
         file_name = "{:s}.json".format(cls.__name__)
         res = []
         if not os.path.exists(file_name):
-            return []
+            return res
 
         with open(file_name, "r") as f:
             json_list = f.read()
@@ -102,6 +102,65 @@ class Base:
         for obj in lst_obj:
             res.append(cls.create(**obj))
         return res
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """saves list of objects to csv file"""
+        file_name = "{:s}.csv".format(cls.__name__)
+
+        res = []
+        if not list_objs:
+            with open(file_name, "w") as f:
+                csv_writer = csv.writer(f)
+                csv_writer.writerow(res)
+
+        else:
+            for obj in list_objs:
+                # verify class from which the object comes from to get right
+                # representation
+                if obj.__class__.__name__ == "Rectangle":
+                    new_obj = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                if obj.__class__.__name__ == "Square":
+                    new_obj = [obj.id, obj.size, obj.x, obj.y]
+                # append the list representation to the res list
+                res.append(new_obj)
+
+        # open csv writer and write rows
+        with open(file_name, "w") as f:
+            csv_writer = csv.writer(f)
+            csv_writer.writerows(res)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """loads objects from a csv file"""
+        file_name = "{:s}.csv".format(cls.__name__)
+        res = []
+
+        # verify if file exist
+        if not os.path.exists(file_name):
+            return res
+        else:
+            with open(file_name, "r") as f:
+                csv_reader = csv.reader(f)
+
+                # read each row at a time and turn to
+                # corresponding object using create method
+                for obj in csv_reader:
+                    # create new object based on type
+                    if cls.__name__ == "Rectangle":
+                        new = cls(1, 1)
+                    if cls.__name__ == "Square":
+                        new = cls(1)
+
+                    # convert every element of obj to int
+                    int_obj = []
+                    for i in obj:
+                        int_obj.append(int(i))
+                    # update the oject attributes based on values read
+                    new.update(*int_obj)
+
+                    res.append(new)
+            return res
 
     @staticmethod
     def drawi(list_rectangles, list_squares):
