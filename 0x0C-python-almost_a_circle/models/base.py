@@ -80,7 +80,7 @@ class Base:
         if cls.__name__ == "Rectangle":
             dummy = cls(12, 15)
 
-        if cls.__name__ == "Square":
+        else:
             dummy = cls(5)
 
         dummy.update(**dictionary)
