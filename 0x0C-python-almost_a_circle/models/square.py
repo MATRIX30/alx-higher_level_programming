@@ -49,6 +49,7 @@ class Square(Rectangle):
         """method to assign new values to attributes"""
         if bool(args):
             if len(args) == 1:
+                if type(args[0]) is not int and args is not None:
                 self.id = args[0]
             elif len(args) == 2:
                 self.id = args[0]
