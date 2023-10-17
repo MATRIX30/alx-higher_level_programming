@@ -116,10 +116,56 @@ class Base:
         return list_ins
 
     @staticmethod
-    def draw(list_rectangles, list_squares):
+    def drawi(list_rectangles, list_squares):
         pass
 
     # delete this and work on it
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Opens a Turtle window and draws
+        rectangles and squares.
+
+        Args:
+            - list_rectangles: list of Rectangle instances
+            - list_squares: list of Square instances
+        """
+
+        import turtle
+        import time
+        from random import randrange
+
+        t = turtle.Turtle()
+        t.color("beige")
+        turtle.bgcolor("violet")
+        t.shape("square")
+        t.pensize(8)
+
+        for i in list_rectangles + list_squares:
+            t.penup()
+            t.setpos(0, 0)
+            turtle.Screen().colormode(255)
+            t.pencolor((randrange(255), randrange(255), randrange(255)))
+            Base.draw_rect(t, i)
+            time.sleep(1)
+        time.sleep(5)
+
+    @staticmethod
+    def draw_rect(t, rect):
+        """Helper method that draws a Rectangle
+        or Square.
+        """
+
+        t.penup()
+        t.setpos(rect.x, rect.y)
+        t.pendown()
+        t.forward(rect.width)
+        t.left(90)
+        t.forward(rect.height)
+        t.left(90)
+        t.forward(rect.width)
+        t.left(90)
+        t.forward(rect.height)
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Method that saves a CSV file"""
