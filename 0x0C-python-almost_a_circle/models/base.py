@@ -119,6 +119,7 @@ class Base:
     def draw(list_rectangles, list_squares):
         pass
 
+    # delete this and work on it
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Method that saves a CSV file"""
