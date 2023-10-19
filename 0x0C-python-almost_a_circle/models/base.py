@@ -163,6 +163,6 @@ class Base:
             return res
 
     @staticmethod
-    def drawi(list_rectangles, list_squares):
+    def draw(list_rectangles, list_squares):
         """sd"""
         pass
