@@ -80,6 +80,12 @@ class TestRectangle(unittest.TestCase):
         self.assertRaises(ValueError, Rectangle,1,4,-4,5)
         self.assertRaises(ValueError, Rectangle,1,4,4,-5)
         
+    def test_area(self):
+        """ testing the area method"""
+        # assert a call to area returns an integer
+        self.assertIsInstance(self.r1.area(), int)
+        # assert returns right answer
+        self.assertEqual(self.r1.area(), 10)
         
         
         
