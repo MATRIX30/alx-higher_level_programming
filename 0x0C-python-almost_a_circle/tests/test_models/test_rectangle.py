@@ -15,7 +15,7 @@ class TestRectangle(unittest.TestCase):
         """
         self.r1 = Rectangle(2,5)
         self.r2 = Rectangle(8,14,1,3)
-    
+        self.r3 = Rectangle(8,14,1,3,25)
     
     
     def test_inheritance_from_base(self):
@@ -29,6 +29,10 @@ class TestRectangle(unittest.TestCase):
         
         # verify if initializing with negative length raises value error
         self.assertRaises(ValueError, Rectangle,1,-4,4,5)
+        
+        #test constructor with default values for id
+        self.assertEqual(self.r1.id + 1,self.r2.id)
+        self.assertEqual(self.r3.id,25)
         
         # testing getter and setter for width
         self.assertEqual(self.r1.width,2)
@@ -55,8 +59,30 @@ class TestRectangle(unittest.TestCase):
         self.r2.y = 4
         self.assertEqual(self.r2.y,4)
         
-    def test_validation(self):
+    def test_validate_attributes(self):
+        """ validating all the attributes"""
+        # validating for the right type 
+        self.assertRaises(TypeError, Rectangle,10, "2")
+        self.assertRaises(TypeError, Rectangle,"3", 4)
+        self.assertRaises(TypeError, Rectangle,"10", "2")
+        
+        self.assertRaises(TypeError, Rectangle,2.5, 2)
+        self.assertRaises(TypeError, Rectangle,"3", 4.5)
+        self.assertRaises(TypeError, Rectangle,2, 5.4)
+        
+        self.assertRaises(TypeError, Rectangle,float('inf'), 5.4)
+        
+        # validating for the right value
+        self.assertRaises(ValueError, Rectangle,0,4,3,5)
+        self.assertRaises(ValueError, Rectangle,1,0,4,5)
+        self.assertRaises(ValueError, Rectangle,-8,4,3,5)
+        self.assertRaises(ValueError, Rectangle,1,-7,4,5)
         self.assertRaises(ValueError, Rectangle,1,4,-4,5)
+        self.assertRaises(ValueError, Rectangle,1,4,4,-5)
+        
+        
+        
+        
         
     def tearDown(self) -> None:
         return super().tearDown()
