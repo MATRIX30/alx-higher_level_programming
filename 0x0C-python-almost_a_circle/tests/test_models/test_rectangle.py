@@ -5,6 +5,8 @@ from models.rectangle import Rectangle
 from models.base import Base
 import unittest
 
+from unittest.mock import patch, Mock
+import io
 
 class TestRectangle(unittest.TestCase):
     """Test class for Rectangle class"""
@@ -88,7 +90,49 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r1.area(), 10)
         
         
+    def test_display(self):
+        """test for display method"""
+        r5 = Rectangle(2,2)
         
+        with patch('sys.stdout',new_callable=io.StringIO) as mock_print:
+            r5.display()
+            
+        captured_output = mock_print.getvalue()
+        self.assertEqual(captured_output,"##\n##\n")
+        
+        r6 = Rectangle(1,1)
+        
+        with patch('sys.stdout',new_callable=io.StringIO) as mock_print:
+            r6.display()
+            
+        captured_output = mock_print.getvalue()
+        self.assertEqual(captured_output,"#\n")
+        
+        r7 = Rectangle(2,3)
+        
+        with patch('sys.stdout',new_callable=io.StringIO) as mock_print:
+            r7.display()
+            
+        captured_output = mock_print.getvalue()
+        self.assertEqual(captured_output,"##\n##\n##\n")
+        
+    def test___str__(self):
+        """testing str method"""
+        r8 = Rectangle(2,3)
+        mock_obj = Mock()
+        
+        with patch('builtins.print', mock_obj):
+            print(r8)
+        
+        # assert the print is called with the object 
+        mock_obj.assert_called_with(r8)
+        
+        """verify if the right object format gets printed"""
+        with patch('sys.stdout',new_callable=io.StringIO) as mock_print:
+            print(r8)
+            
+        captured_value = mock_print.getvalue()
+        self.assertEqual(captured_value,f"[Rectangle] ({r8.id}) {r8.x}/{r8.y} - {r8.width}/{r8.height}\n")
         
     def tearDown(self) -> None:
         return super().tearDown()
