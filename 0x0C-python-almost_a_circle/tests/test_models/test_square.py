@@ -3,9 +3,12 @@
 
 
 import unittest
-
+from models.square import Square
 
 class TestSqaure(unittest.TestCase):
     """Test class for Square class"""
 
-    pass
+    def setUp(self) -> None:
+        """setup method for square"""
+        self.s1 = Square()
+    
