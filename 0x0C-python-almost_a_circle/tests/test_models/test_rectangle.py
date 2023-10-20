@@ -148,8 +148,15 @@ class TestRectangle(unittest.TestCase):
         captured_value = mock_print.getvalue()
         self.assertEqual(captured_value,f"[Rectangle] ({r8.id}) {r8.x}/{r8.y} - {r8.width}/{r8.height}\n")
     
-    def test_update(self):
+    def test_update_nothing(self):
         """Testing the update method"""
+        r = Rectangle(2,3)
+        w = r.width
+        h = r.height
+        r.update()
+        self.assertEqual(r.width, w)
+        self.assertEqual(r.height, h)
+        
     
     def tearDown(self) -> None:
         return super().tearDown()
