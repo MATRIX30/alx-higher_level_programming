@@ -116,6 +116,20 @@ class TestRectangle(unittest.TestCase):
         captured_output = mock_print.getvalue()
         self.assertEqual(captured_output,"##\n##\n##\n")
         
+        r8 = Rectangle(2,3,2)
+        with patch('sys.stdout',new_callable=io.StringIO) as mock_print:
+            r8.display()
+            
+        captured_output = mock_print.getvalue()
+        self.assertEqual(captured_output,"  ##\n  ##\n  ##\n")
+        
+        r9 = Rectangle(2,3,2,1)
+        with patch('sys.stdout',new_callable=io.StringIO) as mock_print:
+            r9.display()
+            
+        captured_output = mock_print.getvalue()
+        self.assertEqual(captured_output,"\n  ##\n  ##\n  ##\n")
+        
     def test___str__(self):
         """testing str method"""
         r8 = Rectangle(2,3)
