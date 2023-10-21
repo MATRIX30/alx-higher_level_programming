@@ -559,4 +559,6 @@ class TestSquareMethods(unittest.TestCase):
         self.assertEqual(len(s1_dictionary), len(s2_dictionary))
         self.assertEqual(type(s2_dictionary), dict)
         self.assertFalse(s1 == s2)
+        Square.save_to_file([])
+
 
