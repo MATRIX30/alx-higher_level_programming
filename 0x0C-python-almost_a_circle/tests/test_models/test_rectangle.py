@@ -156,7 +156,41 @@ class TestRectangle(unittest.TestCase):
         r.update()
         self.assertEqual(r.width, w)
         self.assertEqual(r.height, h)
+    
+    def test_update(self):
+        """Testing the update method"""
+        r = Rectangle(2,3)
+        id = r.id
+        w = r.width
+        h = r.height
+        r.update(89)
+        self.assertEqual(r.width, w)
+        self.assertEqual(r.height, h)
+        self.assertNotEqual(r.id, id)
+        self.assertEqual(r.id, 89)
+        
+        #updating width
+        r.update(89,2)
+        self.assertEqual(r.width,2)
+        
+        
+        #updating width
+        r.update(89,2)
+        self.assertEqual(r.width,2)
+        
+        #updating width
+        r.update(89,2, 1,5)
+        self.assertEqual(r.x,5)
+        
+        #updating width
+        r.update(89,2, 1)
+        self.assertEqual(r.height,1)
+        
+        #updating width
+        r.update(89,2,1,5,4)
+        self.assertEqual(r.y,4)
         
     
+        
     def tearDown(self) -> None:
         return super().tearDown()
