@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-"""test module for rectangle class"""
-
+""" Module for test Rectangle class """
+import unittest
+import io
+import contextlib
+from io import StringIO
+from unittest import TestCase
 from models.rectangle import Rectangle
 from models.base import Base
-import unittest
+
 
 from unittest.mock import patch, Mock
 import io
