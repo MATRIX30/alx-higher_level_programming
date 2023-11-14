@@ -4,4 +4,4 @@
 -- id = 89
 -- name = Best School
 -- The database name will be passed as an argument of the mysql command
-INSERT INTO TABLE first_table(id,name) VALUES(89, "Best School");
+INSERT INTO TABLE first_table VALUES(89, "Best School");
