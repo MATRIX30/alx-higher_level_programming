@@ -14,6 +14,5 @@ IDENTIFIED BY 'user_0d_2_pwd';
 
 -- Granting user privileges
 GRANT SELECT 
-ON hbtn_0d_2
-TO 'user_0d_2'@'localhost'
-WITH GRANT OPTION;
+ON hbtn_0d_2.*
+TO 'user_0d_2'@'localhost';
