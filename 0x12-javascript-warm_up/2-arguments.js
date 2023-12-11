@@ -4,9 +4,9 @@
 const arg1 = process.argv[2]
 const arg2 = process.argv[3]
 if (arg2) {
-  console.log('Arguments Found')
+  console.log('Arguments found')
 } else if (arg1) {
-  console.log('Argument Found')
+  console.log('Argument found')
 } else {
-  console.log('No Argument Found')
+  console.log('No argument')
 }
