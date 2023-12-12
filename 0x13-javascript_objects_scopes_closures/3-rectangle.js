@@ -1,5 +1,6 @@
 #!/usr/bin/node
-// Rectangle module
+// Create an instance method called print() 
+// that prints the rectangle using the character X
 
 module.exports = class Rectangle {
 	// rectangle class
@@ -13,7 +14,7 @@ module.exports = class Rectangle {
 	  }
 	};
 
-  function print(params) {
+  print() {
     console.log("hello");
   }
   };
