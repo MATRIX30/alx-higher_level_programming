@@ -1,10 +1,16 @@
 #!/usr/bin/node
-/*
-The first argument is the file path of the first source file
-The second argument is the file path of the second source file
-The third argument is the file path of the destination
-*/
-const files = require('files');
-const file1 = files.readFileSync(process.argv[2], 'utf8');
-const file2 = files.readFileSync(process.argv[3], 'utf8');
-files.writeFileSync(process.argv[4], file1 + file2);
+
+const fs = require('fs');
+
+// Command-line arguments
+const [, , inputFilePath1, inputFilePath2, outputFilePath] = process.argv;
+
+// Read contents of the input files
+const content1 = fs.readFileSync(inputFilePath1, 'utf8');
+const content2 = fs.readFileSync(inputFilePath2, 'utf8');
+
+// Concatenate contents
+const concatenatedContent = content1 + content2;
+
+// Write the concatenated content to the output file
+fs.writeFileSync(outputFilePath, concatenatedContent);
