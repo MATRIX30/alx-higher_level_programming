@@ -43,7 +43,7 @@ if __name__ == "__main__":
         # build and execute query
         cur = conn.cursor()
         cur.execute(
-            "SELECT * FROM states WHERE INSTR(name, 'N') = 1 ORDER BY id ASC"
+            "SELECT * FROM states WHERE SUBSTRING(name, 1, 1) = 'N' ORDER BY id ASC"
         )
         records = cur.fetchall()
 
