@@ -43,13 +43,12 @@ if __name__ == "__main__":
         # build and execute query
         cur = conn.cursor()
         cur.execute(
-            "SELECT * FROM states WHERE SUBSTRING(name, 1, 1) = 'N' ORDER BY id ASC"
-        )
+            "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+            )
         records = cur.fetchall()
 
         # print out query result
-        for record in records:
-            print(record)
+        [print(record) for record in records if record[1][0] == "N"]
 
         # close all connections to db
         cur.close()
