@@ -54,7 +54,7 @@ if __name__ == "__main__":
         records = cur.fetchall()
 
         # print out query result
-        [print(record) for record in records]
+        [print(record) for record in records if record[1] == user_input]
 
         # close all connections to db
         cur.close()
