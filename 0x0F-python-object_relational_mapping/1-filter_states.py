@@ -42,7 +42,9 @@ if __name__ == "__main__":
 
         # build and execute query
         cur = conn.cursor()
-        cur.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+        cur.execute(
+            "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+        )
         records = cur.fetchall()
 
         # print out query result
