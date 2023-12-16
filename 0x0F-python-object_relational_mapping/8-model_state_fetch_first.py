@@ -38,7 +38,7 @@ if __name__ == "__main__":
         # prepare query
         res = session.query(State).order_by(State.id).first()
         print(str(res.id) + ": " + res.name)
-    except:
+    except Exception:
         pass
 
     # closing the session
