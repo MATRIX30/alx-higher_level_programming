@@ -42,29 +42,27 @@ if __name__ == "__main__":
             db=db_name,
             charset="utf8",
         )
-        # sanitize state_name against sql injection attack
-        state_name = state_name.replace("'", "")
-        state_name = state_name.replace(";", "")
+        # sanitize state_name by converting to tuple
+        state_name = (state_name,)
 
         # build and execute query
         cur = conn.cursor()
-        cur.execute(
-            "SELECT cities.name, states.name \
+
+        sql_query = "SELECT cities.name, states.name \
             FROM cities  \
             INNER JOIN states \
             ON cities.state_id = states.id \
-            AND states.name = '{:s}' \
-            ORDER BY cities.id ASC".format(state_name)
-            )
+            WHERE states.name = %s \
+            ORDER BY cities.id ASC"
+        cur.execute(sql_query, state_name)
         records = cur.fetchall()
 
         # print out query result
         for i, record in enumerate(records):
-            if record[1] == state_name:
-                if i == len(records) - 1:
-                    print(record[0])
-                else:
-                    print(record[0], end=', ')
+            if i == len(records) - 1:
+                print(record[0])
+            else:
+                print(record[0], end=', ')
 
         # close all connections to db
         cur.close()
