@@ -34,9 +34,12 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # prepare query
-    res = session.query(State).order_by(State.id).first()
-    print(str(res.id) + ": " + res.name)
+    try:
+        # prepare query
+        res = session.query(State).order_by(State.id).first()
+        print(str(res.id) + ": " + res.name)
+    except:
+        pass
 
     # closing the session
     session.close()
