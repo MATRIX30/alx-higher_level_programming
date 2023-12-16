@@ -49,7 +49,7 @@ if __name__ == "__main__":
         # build and execute query
         cur = conn.cursor()
         cur.execute(
-            "SELECT cities.name \
+            "SELECT cities.name, states.name \
             FROM cities  \
             INNER JOIN states \
             ON cities.state_id = states.id \
@@ -60,10 +60,11 @@ if __name__ == "__main__":
 
         # print out query result
         for i, record in enumerate(records):
-            if i == len(records) - 1:
-                print(record[0])
-            else:
-                print(record[0], end=', ')
+            if record[1] == state_name:
+                if i == len(records) - 1:
+                    print(record[0])
+                else:
+                    print(record[0], end=', ')
 
         # close all connections to db
         cur.close()
