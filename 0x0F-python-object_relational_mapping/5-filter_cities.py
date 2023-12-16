@@ -48,11 +48,11 @@ if __name__ == "__main__":
         # build and execute query
         cur = conn.cursor()
 
-        sql_query = "SELECT cities.name, states.name \
+        sql_query = "SELECT cities.name \
             FROM cities  \
             INNER JOIN states \
             ON cities.state_id = states.id \
-            AND states.name = %s \
+            WHEre states.name = %s \
             ORDER BY cities.id ASC"
         cur.execute(sql_query, state_name)
         records = cur.fetchall()
