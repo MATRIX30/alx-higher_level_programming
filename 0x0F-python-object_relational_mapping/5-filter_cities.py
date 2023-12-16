@@ -58,11 +58,8 @@ if __name__ == "__main__":
         records = cur.fetchall()
 
         # print out query result
-        for i, record in enumerate(records):
-            if i == len(records) - 1:
-                print(record[0])
-            else:
-                print(record[0], end=', ')
+        cities_in_state = [record[0] for record in records]
+        print(", ".join(cities_in_state))
 
         # close all connections to db
         cur.close()
