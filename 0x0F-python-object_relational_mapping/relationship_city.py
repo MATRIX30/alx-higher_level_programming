@@ -19,7 +19,7 @@ You must use the module SQLAlchemy
 from sqlalchemy import ForeignKey
 from sqlalchemy import Column, String, Integer
 from sqlalchemy.orm import relationship, backref
-from model_state import Base, State
+from relationship_state import Base, State
 
 
 class City(Base):
@@ -28,7 +28,7 @@ class City(Base):
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
-    state = relationship("State", backref=backref("cities", order_by=id))
+    # state = relationship("State", backref=backref("cities", order_by=id))
 
 # create tables
 # Base.metadata.create_all(engine)
