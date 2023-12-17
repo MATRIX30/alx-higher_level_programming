@@ -31,10 +31,10 @@ if __name__ == "__main__":
     session = Session()
 
     # query for object to modify by id
-    res = session.query(State).filter(State.id == 7).first()
+    state_to_update = session.query(State).filter(State.id == 2).first()
 
     # modify object's name attribute
-    res.name = "Bamenda"
+    state_to_update.name = "New Mexico"
 
     # commit changes to session
     session.commit()
