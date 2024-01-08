@@ -10,12 +10,19 @@
 import urllib.request
 
 url = "https://alx-intranet.hbtn.io/status"
-with urllib.request.urlopen(url) as response:
-    data = response.read()
-    data_decoded = data.decode('utf-8')
 
-    # display data
-    print("Body Response:")
-    print("\t- type:", type(data))
-    print("\t- content:", data)
-    print("\t- utf8 content:", data_decoded)
+try:
+	with urllib.request.urlopen(url) as response:
+		data = response.read()
+		data_decoded = data.decode('utf-8')
+
+		# display data
+		print("Body Response:")
+		print("\t- type:", type(data))
+		print("\t- content:", data)
+		print("\t- utf8 content:", data_decoded)
+
+except urllib.error.URLError as e:
+    print("URLError", e)
+except url.error.HTTPError as e:
+    print("HTTPError", e)
