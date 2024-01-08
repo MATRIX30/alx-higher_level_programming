@@ -21,10 +21,11 @@ if __name__ == "__main__":
     import sys
 
     url = sys.argv[1]
-    email = urlencode(sys.argv[2]).encode('utf-8')
+    email = {'email': sys.argv[2]}
+    data = urlencode(email).encode('utf-8')
 
     # creating the request and send to url
-    sentRequest = Request(url, data={'email': email}, method='POST')
+    sentRequest = Request(url, data, method='POST')
 
     with urlopen(sentRequest) as response:
         response_body = response.read().decode('utf8')
