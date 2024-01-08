@@ -8,17 +8,16 @@
 # You must use a with statement
 
 if __name__ == "__main__":
-	import urllib.request
+    import urllib.request
 
-	url = "https://alx-intranet.hbtn.io/status"
+    url = "https://alx-intranet.hbtn.io/status"
 
+    with urllib.request.urlopen(url) as response:
+        data = response.read()
+        data_decoded = data.decode('utf-8')
 
-	with urllib.request.urlopen(url) as response:
-		data = response.read()
-		data_decoded = data.decode('utf-8')
-
-		# display data
-		print("Body Response:")
-		print("\t- type: {}".format(type(data)))
-		print("\t- content: {}".format(data))
-		print("\t- utf8 content: {}".format(data_decoded))
+        # display data
+        print("Body Response:")
+        print("\t- type: {}".format(type(data)))
+        print("\t- content: {}".format(data))
+        print("\t- utf8 content: {}".format(data_decoded))
