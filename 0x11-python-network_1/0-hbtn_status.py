@@ -7,22 +7,17 @@
 # example (tabulation before -)
 # You must use a with statement
 
-import urllib.request
+if __name__ == "__main__":
+    import urllib.request
 
-url = "https://alx-intranet.hbtn.io/status"
+    url = "https://alx-intranet.hbtn.io/status"
 
-try:
-	with urllib.request.urlopen(url) as response:
-		data = response.read()
-		data_decoded = data.decode('utf-8')
+    with urllib.request.urlopen(url) as response:
+        data = response.read()
+        data_decoded = data.decode('utf-8')
 
-		# display data
-		print("Body Response:")
-		print("\t- type:", type(data))
-		print("\t- content:", data)
-		print("\t- utf8 content:", data_decoded)
-
-except urllib.error.URLError as e:
-    print("URLError", e)
-except url.error.HTTPError as e:
-    print("HTTPError", e)
+        # display data
+        print("Body Response:")
+        print("\t- type:", type(data))
+        print("\t- content:", data)
+        print("\t- utf8 content:", data_decoded)
