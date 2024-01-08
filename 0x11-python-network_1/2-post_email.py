@@ -17,10 +17,11 @@ using the web server running on port 5000
 """
 if __name__ == "__main__":
     from urllib.request import urlopen, Request
+    from urllib.parse import urlencode
     import sys
 
     url = sys.argv[1]
-    email = sys.argv[2]
+    email = urlencode(sys.argv[2]).encode('utf-8')
 
     # creating the request and send to url
     sentRequest = Request(url, data={'email': email}, method='POST')
