@@ -19,7 +19,7 @@ if __name__ == "__main__":
         data_decoded = data.decode('utf-8')
 
         # display data
-        print("Body Response:")
+        print("Body response:")
         print("\t- type: {}".format(type(data)))
         print("\t- content: {}".format(data))
         print("\t- utf8 content: {}".format(data_decoded))
