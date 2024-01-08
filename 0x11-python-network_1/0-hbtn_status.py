@@ -10,11 +10,11 @@ You must use a with statement
 """
 
 if __name__ == "__main__":
-    import urllib.request
+    from urllib.request import urlopen
 
     url = "https://alx-intranet.hbtn.io/status"
 
-    with urllib.request.urlopen(url) as response:
+    with urlopen(url) as response:
         data = response.read()
         data_decoded = data.decode('utf-8')
 
