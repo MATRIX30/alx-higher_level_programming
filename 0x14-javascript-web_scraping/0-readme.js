@@ -7,16 +7,15 @@ Write a script that reads and prints the content of a file.
 	error object
 */
 
-const fs = require('fs')
-const args = process.argv.slice(2)
-file_path = args[0]
+const fs = require('fs');
+const args = process.argv.slice(2);
+file_path = args[0];
 
 //
 fs.readFile(file_path, 'utf8', (err, data) => {
   if (err) {
-    console.log(err)
+    console.log(err);
     return
   }
-  console.log(data)
-}
-)
+  console.log(data);
+})
