@@ -1,37 +1,39 @@
-0x15. JavaScript - Web jQuery
-Front-end
-JavaScript
- By: Guillaume, CTO at Holberton School
- Weight: 1
- Project will start Feb 7, 2024 4:00 AM, must end by Feb 8, 2024 4:00 AM
- Manual QA review must be done (request it when you are done with the project)
-Concepts
+# 0x15. JavaScript - Web jQuery
+`Front-end`
+`JavaScript`
+-  By: Guillaume, CTO at Holberton School
+-  Weight: 1
+-  Project will start Feb 7, 2024 4:00 AM, must end by Feb 8, 2024 4:00 AM
+-  Manual QA review must be done (request it when you are done with the project)
+
+## Concepts
 For this project, we expect you to look at these concepts:
 
-JavaScript in the browser
-Dealing with data statically versus dynamically
+- [JavaScript in the browser](https://intranet.alxswe.com/concepts/3)
+- [Dealing with data statically versus dynamically](https://intranet.alxswe.com/concepts/35)
 
 
-Resources
+## Resources
 Read or watch:
 
-What is JavaScript?
-Selector
-Get and set content
-Manipulate CSS classes
-Manipulate DOM elements
-API
-Introduction
-GET & POST request
-JQuery Ajax Tutorial #1 - Using AJAX & API’s
-What went wrong? Troubleshooting JavaScript
-JQuery
-JQuery API
-JQuery Ajax
-Learning Objectives
+[What is JavaScript?]
+[Selector]
+[Get and set content]
+[Manipulate CSS classes]
+[Manipulate DOM elements]
+[API]
+[Introduction]
+[GET & POST request]
+[JQuery Ajax Tutorial #1 - Using AJAX & API’s]
+[What went wrong? Troubleshooting JavaScript]
+[JQuery]
+[JQuery API]
+[JQuery Ajax]
+
+## Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-General
+## General
 Why JQuery make front-end programming so easy (don’t forget to tweet today, with the hashtag #ilovejquery :))
 How to select HTML elements in JavaScript
 How to select HTML elements with JQuery
