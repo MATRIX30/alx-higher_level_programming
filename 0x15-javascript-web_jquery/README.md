@@ -64,10 +64,14 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 - HTML should not reload for each action: DOM manipulation, update values, fetch data…
 
 ## More Info
+
 Import JQuery
+
+``` html
 <head>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
+```
 
 
 Manual QA Review
