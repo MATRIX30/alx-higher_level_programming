@@ -16,19 +16,19 @@ For this project, we expect you to look at these concepts:
 ## Resources
 Read or watch:
 
-[What is JavaScript?]
-[Selector]
-[Get and set content]
-[Manipulate CSS classes]
-[Manipulate DOM elements]
-[API]
-[Introduction]
-[GET & POST request]
-[JQuery Ajax Tutorial #1 - Using AJAX & API’s]
-[What went wrong? Troubleshooting JavaScript]
-[JQuery]
-[JQuery API]
-[JQuery Ajax]
+- [What is JavaScript?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)
+- [Selector](https://jquery-tutorial.net/selectors/using-elements-ids-and-classes/)
+- [Get and set content](https://jquery-tutorial.net/dom-manipulation/getting-and-setting-content/)
+- [Manipulate CSS classes](https://jquery-tutorial.net/dom-manipulation/getting-and-setting-css-classes/)
+- [Manipulate DOM elements]()
+- [API](https://oscarotero.com/jquery/)
+- [Introduction](https://jquery-tutorial.net/ajax/introduction/)
+- [GET & POST request](https://jquery-tutorial.net/ajax/the-get-and-post-methods/)
+- [JQuery Ajax Tutorial #1 - Using AJAX & API’s](https://www.youtube.com/watch?v=fEYx8dQr_cQ)
+- [What went wrong? Troubleshooting JavaScript](Learn)
+- [JQuery](https://jquery.com/)
+- [JQuery API](https://api.jquery.com/)
+- [JQuery Ajax](https://www.youtube.com/watch?v=fEYx8dQr_cQ)
 
 ## Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
@@ -74,5 +74,6 @@ Import JQuery
 ```
 
 
-Manual QA Review
-It is your responsibility to request a review for this project from a peer before the project’s deadline. If no peers have been reviewed, you should request a review from a TA or staff member.
+## Manual QA Review
+
+- It is your responsibility to request a review for this project from a peer before the project’s deadline. If no peers have been reviewed, you should request a review from a ***TA or staff member***.
