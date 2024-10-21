@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// script that prints first argument passed to it
+// script that prints first argument passed to it on stdout
 
 const { argv } = require('node:process');
 if (argv[2]) {
